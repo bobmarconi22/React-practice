@@ -18,32 +18,46 @@ function Baseball({ year, sort }) {
     }
     fetchData();
   }, [year]);
+
+  function findDiv(id) {
+    return data.records.filter((x) => x.division.id === id)[0].teamRecords;
+  }
+
   return (
     data &&
-    ((sort === "MLB" &&
+    ((sort === "MLB" && (
       <>
         <h2>MLB</h2>
       </>
-    ) ||
-      (sort === "League" &&
+    )) ||
+      (sort === "League" && (
         <>
           <h2>National League</h2>
           <h2>American League</h2>
         </>
-      ) ||
-      (sort === "Division" &&
+      )) ||
+      (sort === "Division" && (
         <>
-          <h2>National League</h2> {/* League id : 103 */}
-          <h3>East</h3> {/* Div id : 103 */}
-          {console.log('=================>', data.records.filter((x) => x.league.id === 203))}
-          <h3>Central</h3> {/* id : 203 */}
-          <h3>West</h3> {/* id : 203 */}
+          <div className="League">
+            <h2>National League</h2> {/* League id : 104 */}
+            <h3>East</h3> {/* Div id : 204 */}
+            {findDiv(204).map((x, index) => (
+              <div key={index}>
+                <p>
+                  {x.team.name} {x.gamesPlayed} {x.wins} {x.losses} {x.wins}{" "}
+                  {x.wins}
+                </p>
+              </div>
+            ))}
+            <h3>Central</h3> {/* id : 205 */}
+            <h3>West</h3> {/* id : 203 */}
+          </div>
           <h2>American League</h2> {/*} League id : 103 */}
           <h3>East</h3> {/* Div id : 201 */}
           <h3>Central</h3> {/* id : 202 */}
           <h3>West</h3> {/* id : 200 */}
         </>
-      ))
+      )))
   );
 }
 

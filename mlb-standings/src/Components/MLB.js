@@ -38,24 +38,143 @@ function Baseball({ year, sort }) {
       )) ||
       (sort === "Division" && (
         <>
-          <div className="League">
-            <h2>National League</h2> {/* League id : 104 */}
-            <h3>East</h3> {/* Div id : 204 */}
-            {findDiv(204).map((x, index) => (
-              <div key={index}>
-                <p>
-                  {x.team.name} {x.gamesPlayed} {x.wins} {x.losses} {x.wins}{" "}
-                  {x.wins}
-                </p>
-              </div>
-            ))}
-            <h3>Central</h3> {/* id : 205 */}
-            <h3>West</h3> {/* id : 203 */}
-          </div>
-          <h2>American League</h2> {/*} League id : 103 */}
-          <h3>East</h3> {/* Div id : 201 */}
-          <h3>Central</h3> {/* id : 202 */}
-          <h3>West</h3> {/* id : 200 */}
+          <table className="League">
+            <thead>
+              <tr>
+                <th colSpan="6">
+                  <h2>National League</h2>
+                  {/* League id : 104 */}
+                </th>
+              </tr>
+              <tr>
+                <th className="table-team">Team</th>
+                <th className="table-games">GP</th>
+                <th className="table-percent">W%</th>
+                <th className="table-wins">W</th>
+                <th className="table-losses">L</th>
+                <th className="table-streak"> </th>
+              </tr>
+              <tr>
+                <th colSpan="6">
+                  <h3>East</h3>
+                  {/* Div id : 204 */}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {findDiv(204).map((x, index) => (
+                <tr key={index}>
+                  <td className="table-team">{x.team.name}</td>
+                  <td className="table-games">{x.gamesPlayed}</td>
+                  <td className="table-percent">{x.winningPercentage}</td>
+                  <td className="table-wins">{x.wins}</td>
+                  <td className="table-losses">{x.losses}</td>
+                  <td className="table-streak">{x.streak.streakCode}</td>
+
+                </tr>
+              ))}
+              </tbody>
+              <th colSpan="6">
+                <h3>Central</h3> {/* Div id : 205 */}
+              </th>
+              <tbody>
+              {findDiv(205).map((x, index) => (
+                <tr key={index}>
+                  <td className="table-team">{x.team.name}</td>
+                  <td className="table-games">{x.gamesPlayed}</td>
+                  <td className="table-percent">{x.winningPercentage}</td>
+                  <td className="table-wins">{x.wins}</td>
+                  <td className="table-losses">{x.losses}</td>
+                  <td className="table-streak">{x.streak.streakCode}</td>
+
+                </tr>
+              ))}
+              </tbody>
+              <th colSpan="6">
+                <h3>West</h3> {/* Div id : 203 */}
+              </th>
+              <tbody>
+              {findDiv(203).map((x, index) => (
+                <tr key={index}>
+                  <td className="table-team">{x.team.name}</td>
+                  <td className="table-games">{x.gamesPlayed}</td>
+                  <td className="table-percent">{x.winningPercentage}</td>
+                  <td className="table-wins">{x.wins}</td>
+                  <td className="table-losses">{x.losses}</td>
+                  <td className="table-streak">{x.streak.streakCode}</td>
+
+                </tr>
+              ))}
+              </tbody>
+          </table>
+          <table className="League">
+          <thead>
+              <tr>
+                <th colSpan="6">
+                  <h2>American League</h2>
+                  {/* League id : 103 */}
+                </th>
+              </tr>
+              <tr>
+                <th className="table-team">Team</th>
+                <th className="table-games">GP</th>
+                <th className="table-percent">W%</th>
+                <th className="table-wins">W</th>
+                <th className="table-losses">L</th>
+                <th className="table-streak"> </th>
+              </tr>
+              <tr>
+                <th colSpan="6">
+                  <h3>East</h3>
+                  {/* Div id : 201 */}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {findDiv(201).map((x, index) => (
+                <tr key={index}>
+                  <td className="table-team">{x.team.name}</td>
+                  <td className="table-games">{x.gamesPlayed}</td>
+                  <td className="table-percent">{x.winningPercentage}</td>
+                  <td className="table-wins">{x.wins}</td>
+                  <td className="table-losses">{x.losses}</td>
+                  <td className="table-streak">{x.streak.streakCode}</td>
+
+                </tr>
+              ))}
+              </tbody>
+              <th colSpan="6">
+                <h3>Central</h3> {/* Div id : 202 */}
+              </th>
+              <tbody>
+              {findDiv(202).map((x, index) => (
+                <tr key={index}>
+                  <td className="table-team">{x.team.name}</td>
+                  <td className="table-games">{x.gamesPlayed}</td>
+                  <td className="table-percent">{x.winningPercentage}</td>
+                  <td className="table-wins">{x.wins}</td>
+                  <td className="table-losses">{x.losses}</td>
+                  <td className="table-streak">{x.streak.streakCode}</td>
+
+                </tr>
+              ))}
+              </tbody>
+              <th colSpan="6">
+                <h3>West</h3> {/* Div id : 200 */}
+              </th>
+              <tbody>
+              {findDiv(200).map((x, index) => (
+                <tr key={index}>
+                  <td className="table-team">{x.team.name}</td>
+                  <td className="table-games">{x.gamesPlayed}</td>
+                  <td className="table-percent">{x.winningPercentage}</td>
+                  <td className="table-wins">{x.wins}</td>
+                  <td className="table-losses">{x.losses}</td>
+                  <td className="table-streak">{x.streak.streakCode}</td>
+                </tr>
+              ))}
+              </tbody>
+            </table>
         </>
       )))
   );

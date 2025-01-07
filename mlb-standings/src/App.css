@@ -36,3 +36,51 @@
     transform: rotate(360deg);
   }
 }
+
+/* Center the table and make it uniform */
+table {
+  width: 80%; /* Set table width */
+  margin: 20px auto; /* Center the table horizontally and add vertical spacing */
+  border-collapse: collapse; /* Merge borders for a clean look */
+}
+
+th, td {
+  border: 1px solid black; /* Add uniform black borders */
+  padding: 7px; /* Add padding for better readability */
+  text-align: center; /* Center-align all cell content */
+}
+
+th {
+  font-weight: bold; /* Ensure table headers stand out */
+  background-color: #f2f2f2; /* Add subtle background for headers */
+  padding: 5px;
+}
+
+/* Center align the headings above the table */
+h2, h3 {
+  text-align: center;
+  margin: 5px;
+}
+
+/* Remove special width from .table-team */
+.table-team {
+  width: 35%;
+  min-width: 167px;
+}
+
+.table-games {
+  width: 15px;
+}
+.table-percent {
+  width: 15px;
+}
+.table-wins {
+  width: 25%;
+}
+.table-losses {
+  width: 25%;
+}
+
+.table-streak{
+  width: 15px;
+}
